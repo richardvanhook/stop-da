@@ -1,0 +1,14 @@
+%html
+  %body
+    %h1 HTTP POSTs to this site will always return the below response.
+    %div{:style=>"background: #eee; border: 1px dashed #aaa"}
+      %pre{:style=>"margin: 5px"} #{returns}
+    %p{:style=>"color: red; font-weight: bold;"} Please note this website should be used for testing purposes only!
+    %p
+      This can be used to prevent users from logging into salesforce.com via Delegated Authentication and can be configured by performing the following steps:
+      %ol
+        %li Go to Setup > Administration Setup > Security Controls > Single Sign-On Settings
+        %li Click Edit
+        %li In Delegated Gateway URL, enter: https://stop-da.herokuapp.com
+        %li Click Save
+        %li For each profile of users whom you'd like to prevent login via the salesforce.com login screen, edit the profile and set "Is Single Sign-On Enabled" to true.
